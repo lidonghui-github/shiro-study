@@ -27,6 +27,9 @@ public class MyRealm  extends AuthorizingRealm {
         String principal = (String) token.getPrincipal();
         //将传入的用户名与数据库中的比较
         if("lidonghui".equals(principal)){
+            //参数1：用户名
+            //参数2：密码
+            //参数3：realm 的名称
             SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(principal, "123456", this.getName());
             return simpleAuthenticationInfo;
         }
